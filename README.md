@@ -1,2 +1,3 @@
-# Programming3-Week1
-Exercises for the week 1 
+# Programming3
+
+Exercises for the on going week! 
