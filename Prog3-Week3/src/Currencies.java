@@ -1,7 +1,4 @@
-import java.sql.SQLOutput;
 import java.util.*;
-
-import static java.lang.Math.*;
 
 /**
  * @author Kashif
@@ -21,7 +18,7 @@ public class Currencies {
         Scanner input = new Scanner(System.in);
 
         ArrayList<String> commandParams = new ArrayList<>();
-        HashMap<String, Double> rates = new HashMap<>();
+        TreeMap<String, Double> rates = new TreeMap<>();
 
         commandParams.add(input.next());
         label:
@@ -34,6 +31,7 @@ public class Currencies {
                     String currencyRateStr = input.next();
                     double currencyRate = Double.parseDouble(currencyRateStr);
                     commandParams.add(String.valueOf(currencyRate));
+                    System.out.printf(Locale.US, "%s %s %.10f%n", commandParams.get(0), currency, currencyRate);
                     System.out.println(String.format(Locale.US, "Stored the rate 1 EUR = %.3f %s", currencyRate, currency.toUpperCase()));
                     rates.put(currency.toUpperCase(), currencyRate);
                     break;
