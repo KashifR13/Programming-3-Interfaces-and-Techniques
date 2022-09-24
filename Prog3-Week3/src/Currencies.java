@@ -7,7 +7,7 @@ public class Currencies {
     /**
      * This main method perform currency conversions by accepting the following commands from standard input
      * 1. rate AAA x -> Records that 1 euro equals x units of the currency AAA.
-     * 2. convert x AAA -> Prints out a message of form “x AAA = y EUR” that tells the value of x units of the currency AAA converted into euros.
+     * 2. convert x AAA -> Prints out a message of form x AAA = y EUR that tells the value of x units of the currency AAA converted into euros.
      * 3. rates -> Prints out all currently known currency rates in ascending alphabetical order of currency codes.
      * 4. quit -> Stops the program.
      * @param args
@@ -19,11 +19,11 @@ public class Currencies {
 
         ArrayList<String> commandParams = new ArrayList<>();
         TreeMap<String, Double> rates = new TreeMap<>();
-
+        
         commandParams.add(input.next());
 
         label:
-        while (true) {
+        do {
 
             switch (commandParams.get(0)) {
 
@@ -82,6 +82,6 @@ public class Currencies {
 
             System.out.print("Enter command: ");
             commandParams.set(0, input.next());
-        }
+        } while (true);
     }
 }
